@@ -1,0 +1,85 @@
+# Replit Prompt: Real Estate Business Introduction Website
+
+## Prompt for Replit
+
+Create a professional, modern, and responsive website to introduce our real estate business, targeting international business school students, expats, foreign professionals, and property investors in Japan. The website should clearly communicate our unique value proposition, services, market focus, and partnership opportunities.
+
+### Website Structure & Content
+
+#### 1. Homepage
+- **Hero Section:**  
+  - Business name and tagline (e.g., "Your Gateway to Exceptional Living & Investment in Japan")
+  - Brief introduction (1–2 sentences) highlighting focus on international clients and innovative services
+  - Prominent call-to-action (CTA) button: "Contact Us" or "Explore Services"
+- **Key Features:**  
+  - AI-powered property visualization
+  - 360° virtual tours
+  - Comprehensive relocation support
+
+#### 2. About Us
+- Company mission and vision
+- Team introduction (optional, can use placeholders)
+- Our partners: Terrace (75% commission kickback), Sumo (banking relationships)
+
+#### 3. Services
+- **Real Estate Agent Services:**  
+  - Property management  
+  - Relocation services  
+  - Property renovation and resale  
+  - Vacation property investment (Nagano focus)  
+  - Tokyo investment strategy (buy, renovate, manage)
+- **Technology Integration:**  
+  - AI visualization  
+  - 3D scanning  
+  - Remote viewings
+- **Service Bundling:**  
+  - Transportation  
+  - Local experiences  
+  - University partnerships
+
+#### 4. Investment Opportunities
+- Vacation property details (Nagano: 30–60 million yen range)
+- Tokyo property investment for foreign investors
+- Ongoing property management
+
+#### 5. University Partnerships
+- Strategy for partnering with business schools
+- Benefits for international students
+
+#### 6. Contact
+- Inquiry form (name, email, message)
+- Company email and phone (use placeholders)
+- Office location (optional)
+
+### Design & Functionality Guidelines
+
+- **Modern, minimalist design** with professional color palette
+- **Mobile-friendly** and responsive layout
+- Clear navigation bar with all sections
+- Use **high-quality images** or placeholders for properties and local experiences
+- Integrate **virtual tour demo** (can be a placeholder image or video)
+- Include testimonials or client logos (optional)
+- Add a **footer** with social media links and legal information
+
+### Example Section Titles
+
+- Welcome to [Your Company Name]
+- Why Choose Us?
+- Our Services
+- Investment Highlights
+- Partnering with Universities
+- Get in Touch
+
+### Technical Notes
+
+- Use HTML, CSS, and JavaScript (React or Next.js preferred, but plain HTML/CSS/JS acceptable)
+- Structure code for easy content updates
+- Ensure accessibility (alt text for images, readable fonts)
+- Optimize for fast loading
+
+**Instructions for Replit:**  
+"Build a multi-page, responsive website for a Japan-focused real estate business serving international clients. Include all sections and features described above. Use professional design, clear navigation, and engaging content to showcase our expertise and value proposition."
+
+This prompt will guide Replit to generate a full-featured introductory website tailored to your business model and target audience, as outlined in your meeting notes[1].
+
+[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/38161878/bd4c2c92-fdd8-45ca-8eb9-070710ab6952/78909913-2009-4f48-8554-97a3f6a7be08_Real_estate_agent_role_and_commission_structure_with_terrace_halls_company.pdf

@@ -1,0 +1,61 @@
+Add "Integral Reforms" Section
+Please add the following section to the website, highlighting modern housing reforms and renovation strategies in Japan. Integrate it as a dedicated section titled "Integral Reforms: Modernizing Japanese Housing". Ensure the design matches the rest of the site, using clear headings, concise bullet points, and visually distinct subsections for each topic.
+
+Integral Reforms: Modernizing Japanese Housing
+1. Zero-Energy & Smart Homes
+Zero-Energy Homes (ZEH):
+
+Net-zero annual energy use via advanced insulation, high-efficiency systems, and solar panels.
+
+Features: superior thermal insulation, triple-glazed windows, airtight construction, and energy management systems.
+
+Benefits: lower utility costs, disaster resilience, healthier indoor environments, and reduced carbon footprint.
+
+Regulatory note: By April 2025, all new homes in Japan must meet strict energy-efficiency standards.
+
+Smart Homes:
+
+Centralized control of lighting, climate, and security via smartphone or voice assistants.
+
+Innovations: smart locks, cameras, earthquake detection, AI-powered assistants, and robotics for daily support.
+
+Market trend: Rapid growth, driven by convenience, sustainability, and government incentives.
+
+2. Senior Housing Renovation
+Demographic Focus: Over 28% of Japan’s population is age 65+.
+
+Renovation Features:
+
+Barrier-free design: step-free access, wide hallways, accessible bathrooms.
+
+Safety: emergency alert systems, motion sensors, remote health monitoring.
+
+Comfort: improved insulation, smart climate control, ergonomic fixtures.
+
+Support: Subsidies and low-interest loans are available for renovations and new construction.
+
+3. Akia: Traditional Japanese Homes for Modern Living
+Background: Over 13% of homes in Japan are vacant (akia), especially in rural areas.
+
+Modernization Approach:
+
+Preserve traditional elements: tatami rooms, shoji screens, wooden beams.
+
+Upgrade essentials: earthquake reinforcement, modern kitchens/bathrooms, insulation, and smart home features.
+
+Ready for modern life: high-speed internet, energy efficiency, flexible layouts.
+
+Incentives: National and local subsidies for akia renovation, including repair and rental support.
+
+Design Guidelines:
+
+Use clear subheadings and icons for each reform type.
+
+Include high-quality images or illustrations of modern and traditional Japanese homes.
+
+Ensure the section is mobile-friendly and visually consistent with the rest of the site.
+
+Optionally add testimonials or case examples to illustrate successful renovations.
+
+Instructions for Replit:
+"Add a new section titled 'Integral Reforms: Modernizing Japanese Housing' to the website. Structure it with three subsections—Zero-Energy & Smart Homes, Senior Housing Renovation, and Akia: Traditional Japanese Homes for Modern Living—using the content above. Ensure the section is visually engaging, easy to navigate, and matches the website’s professional, minimalist style."
