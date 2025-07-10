@@ -71,12 +71,12 @@ export default function IntegralReformsSection() {
             
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Smart home technology" 
                 className="rounded-lg shadow-lg"
               />
               <img 
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Modern energy efficient home" 
                 className="rounded-lg shadow-lg mt-8"
               />
@@ -126,12 +126,12 @@ export default function IntegralReformsSection() {
             
             <div className="lg:order-1 grid grid-cols-2 gap-4">
               <img 
-                src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Accessible bathroom design" 
                 className="rounded-lg shadow-lg"
               />
               <img 
-                src="https://images.unsplash.com/photo-1631889993959-41b4e9c4a13f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Senior-friendly home features" 
                 className="rounded-lg shadow-lg mt-8"
               />

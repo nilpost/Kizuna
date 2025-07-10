@@ -1,4 +1,4 @@
-# JapanRealty Pro - Real Estate Business Website
+# Kizuna 絆 - Real Estate Business Website
 
 ## Overview
 

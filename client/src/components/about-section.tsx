@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About JapanRealty Pro</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Kizuna 絆</h2>
             <p className="text-lg text-gray-600 mb-6">
               Founded with a mission to bridge the gap between international clients and Japan's dynamic real estate market, 
               we specialize in serving business students, expats, and foreign investors seeking exceptional opportunities in Japan.
@@ -18,13 +18,13 @@ export default function AboutSection() {
             
             <div className="bg-gray-50 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Strategic Partners</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <div className="flex items-center">
                   <div className="bg-primary/10 rounded-full w-10 h-10 flex items-center justify-center mr-3">
                     <Building className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Terrace</h4>
+                    <h4 className="font-semibold text-gray-900">Terrace Co</h4>
                     <p className="text-sm text-gray-600">75% commission partnership</p>
                   </div>
                 </div>
@@ -33,8 +33,17 @@ export default function AboutSection() {
                     <University className="text-accent" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Sumo</h4>
+                    <h4 className="font-semibold text-gray-900">Fast Approval Banking</h4>
                     <p className="text-sm text-gray-600">Banking relationships</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="bg-secondary/10 rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                    <Building className="text-secondary" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Integral Reform</h4>
+                    <p className="text-sm text-gray-600">Renovation services</p>
                   </div>
                 </div>
               </div>

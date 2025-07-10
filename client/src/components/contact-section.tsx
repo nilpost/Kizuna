@@ -191,7 +191,7 @@ export default function ContactSection() {
                     <Mail className="text-primary" size={20} />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">info@japanrealtypro.com</p>
+                    <p className="font-medium text-gray-900">info@kizuna-realty.com</p>
                     <p className="text-sm text-gray-600">Email us anytime</p>
                   </div>
                 </div>

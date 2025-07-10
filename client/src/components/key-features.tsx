@@ -5,7 +5,7 @@ export default function KeyFeatures() {
     <section className="py-20 bg-neutral">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose JapanRealty Pro?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Kizuna 絆?</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Combining traditional Japanese hospitality with cutting-edge technology to deliver exceptional real estate experiences.
           </p>

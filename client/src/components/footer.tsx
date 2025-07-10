@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">JapanRealty Pro</h3>
+            <h3 className="text-xl font-bold mb-4">Kizuna 絆</h3>
             <p className="text-gray-400 mb-4">
-              Your trusted partner for exceptional real estate experiences in Japan.
+              Building connections for exceptional real estate experiences in Japan.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>info@japanrealtypro.com</li>
+              <li>info@kizuna-realty.com</li>
               <li>+81-3-1234-5678</li>
               <li>Tokyo, Japan</li>
             </ul>
@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 JapanRealty Pro. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2024 Kizuna 絆. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
       </div>
     </footer>
