@@ -7,6 +7,9 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Kizuna 絆</h2>
+            <p className="text-lg text-gray-600 mb-6 italic font-medium">
+              Kizuna 絆 signifies not just 'bond' or 'connection,' but the deep, enduring relationships built over a lifetime in Japan—growing stronger through every chapter of life, from first arrivals to lifelong belonging.
+            </p>
             <p className="text-lg text-gray-600 mb-6">
               Founded with a mission to bridge the gap between international clients and Japan's dynamic real estate market, 
               we specialize in serving business students, expats, and foreign investors seeking exceptional opportunities in Japan.
