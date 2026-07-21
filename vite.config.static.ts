@@ -20,5 +20,5 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
-  base: "/", // This will be updated to match your GitHub repository name
+  base: "/Kizuna/", // Must match the GitHub Pages project-page subpath (https://nilpost.github.io/Kizuna/)
 });
