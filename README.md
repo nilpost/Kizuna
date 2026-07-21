@@ -17,23 +17,33 @@ Kizuna 絆 signifies not just 'bond' or 'connection,' but the deep, enduring rel
 
 ## 🚀 Deployment
 
-This website is configured for deployment on GitHub Pages using GitHub Actions.
+### Deployment targets
 
-### Automatic Deployment
+This repository contains two independent deploy targets:
+
+- **GitHub Pages (the live marketing site):** the static client only, built
+  with `npm run build:static`. There is **no backend** in this deploy — the
+  contact form opens the visitor's email client via a `mailto:` link. This is
+  what the `.github/workflows/static.yml` workflow publishes.
+- **Full-stack (optional, e.g. Node/Replit):** the Express API in `server/`
+  backed by Postgres via Drizzle (`shared/schema.ts`, `drizzle.config.ts`).
+  This is **not used by GitHub Pages** and is only relevant if you host the
+  full application yourself.
+
+### Automatic Deployment (GitHub Pages)
 
 1. Push to the `main` branch
-2. GitHub Actions will automatically build and deploy the site
-3. The site will be available at `https://yourusername.github.io/repository-name/`
+2. `static.yml` type-checks, builds the static client, and deploys it
+3. The site is served at `https://nilpost.github.io/Kizuna/`
 
-### Manual Setup
+### Setup for a fork
 
 1. Fork or clone this repository
-2. Update the `base` path in `vite.config.static.ts` to match your repository name:
+2. Update the `base` path in `vite.config.static.ts` to match your repo name:
    ```ts
    base: "/your-repository-name/"
    ```
-3. Enable GitHub Pages in your repository settings
-4. Set the source to "GitHub Actions"
+3. In repository **Settings → Pages**, set the source to **"GitHub Actions"**
 
 ## 🛠️ Development
 
@@ -50,8 +60,8 @@ npm run dev
 ### Build for Production
 
 ```bash
-# Build static version for GitHub Pages
-npx vite build --config vite.config.static.ts
+# Build the static version for GitHub Pages (outputs dist/public/index.html)
+npm run build:static
 ```
 
 ## 📁 Project Structure
@@ -64,8 +74,8 @@ npx vite build --config vite.config.static.ts
 │   │   └── lib/           # Utilities and configurations
 │   ├── index-static.html  # HTML template for static deployment
 │   └── App-static.tsx     # Static app version (no backend)
-├── server/                # Express backend (for development)
-├── shared/                # Shared types and schemas
+├── server/                # Express backend — NOT deployed to Pages (see Deployment)
+├── shared/                # Shared types and schemas (used by the backend)
 ├── .github/workflows/     # GitHub Actions deployment
 └── vite.config.static.ts  # Vite config for static build
 ```
