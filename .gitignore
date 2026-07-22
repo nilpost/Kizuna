@@ -104,8 +104,3 @@ ehthumbs.db
 .idea/
 *.swp
 *.swo
-
-# Replit specific
-.replit
-.config/
-.upm

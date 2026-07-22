@@ -17,23 +17,28 @@ Kizuna 絆 signifies not just 'bond' or 'connection,' but the deep, enduring rel
 
 ## 🚀 Deployment
 
-This website is configured for deployment on GitHub Pages using GitHub Actions.
+This is a **client-only static site** (no backend) deployed to GitHub Pages
+behind a custom domain. The contact form opens the visitor's email client via
+a `mailto:` link.
 
 ### Automatic Deployment
 
 1. Push to the `main` branch
-2. GitHub Actions will automatically build and deploy the site
-3. The site will be available at `https://yourusername.github.io/repository-name/`
+2. `.github/workflows/static.yml` type-checks, builds the client, and deploys it
+3. The site is served at **https://kizuna.postiusgroup.com/**
 
-### Manual Setup
+### Custom domain setup
 
-1. Fork or clone this repository
-2. Update the `base` path in `vite.config.static.ts` to match your repository name:
-   ```ts
-   base: "/your-repository-name/"
-   ```
-3. Enable GitHub Pages in your repository settings
-4. Set the source to "GitHub Actions"
+The domain is configured via the committed `client/public/CNAME` file
+(`kizuna.postiusgroup.com`). To point it at GitHub Pages:
+
+1. In your DNS provider (Cloudflare), add a `CNAME` record:
+   `kizuna` → `nilpost.github.io`
+2. In repository **Settings → Pages**, set the source to **"GitHub Actions"**
+   and the custom domain to `kizuna.postiusgroup.com` (enable "Enforce HTTPS")
+
+To serve from a plain `github.io` project path instead, set `base` in
+`vite.config.ts` to `"/<repository-name>/"` and remove the `CNAME` file.
 
 ## 🛠️ Development
 
@@ -50,24 +55,22 @@ npm run dev
 ### Build for Production
 
 ```bash
-# Build static version for GitHub Pages
-npx vite build --config vite.config.static.ts
+# Build the static site (outputs dist/public/index.html)
+npm run build
 ```
 
 ## 📁 Project Structure
 
 ```
-├── client/                 # Frontend React application
+├── client/                 # Frontend React application (SPA)
+│   ├── public/            # Static assets copied verbatim (incl. CNAME)
 │   ├── src/
-│   │   ├── components/     # React components
+│   │   ├── components/    # React components
 │   │   ├── pages/         # Page components
-│   │   └── lib/           # Utilities and configurations
-│   ├── index-static.html  # HTML template for static deployment
-│   └── App-static.tsx     # Static app version (no backend)
-├── server/                # Express backend (for development)
-├── shared/                # Shared types and schemas
-├── .github/workflows/     # GitHub Actions deployment
-└── vite.config.static.ts  # Vite config for static build
+│   │   └── lib/           # Utilities
+│   └── index.html         # HTML entry point
+├── .github/workflows/     # GitHub Actions (build + deploy to Pages)
+└── vite.config.ts         # Vite config
 ```
 
 ## 🎨 Technologies
