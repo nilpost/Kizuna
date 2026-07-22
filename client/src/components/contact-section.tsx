@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
@@ -9,15 +7,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  interest: z.string().min(1, "Please select an interest"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
-  const queryClient = useQueryClient();
   
-  const form = useForm<InsertInquiry>({
-    resolver: zodResolver(insertInquirySchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -28,31 +35,26 @@ export default function ContactSection() {
     },
   });
 
-  const createInquiryMutation = useMutation({
-    mutationFn: async (data: InsertInquiry) => {
-      const response = await apiRequest("POST", "/api/inquiries", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Inquiry Submitted Successfully",
-        description: "Thank you for your inquiry! We will contact you soon.",
-      });
-      form.reset();
-      queryClient.invalidateQueries({ queryKey: ["/api/inquiries"] });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to submit inquiry. Please try again.",
-        variant: "destructive",
-      });
-      console.error("Error submitting inquiry:", error);
-    },
-  });
-
-  const onSubmit = (data: InsertInquiry) => {
-    createInquiryMutation.mutate(data);
+  const onSubmit = (data: ContactFormData) => {
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Inquiry: ${data.interest}`);
+    const body = encodeURIComponent(
+      `Name: ${data.firstName} ${data.lastName}\n` +
+      `Email: ${data.email}\n` +
+      `Phone: ${data.phone || "Not provided"}\n` +
+      `Interest: ${data.interest}\n\n` +
+      `Message:\n${data.message}`
+    );
+    
+    const mailtoLink = `mailto:info@kizuna-realty.com?subject=${subject}&body=${body}`;
+    window.open(mailtoLink, '_blank');
+    
+    toast({
+      title: "Email Client Opened",
+      description: "Your email client has been opened with the inquiry details. Please send the email to complete your inquiry.",
+    });
+    
+    form.reset();
   };
 
   return (
@@ -119,7 +121,7 @@ export default function ContactSection() {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="Enter your phone number" {...field} value={field.value ?? ""} />
+                        <Input type="tel" placeholder="Enter your phone number" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -174,9 +176,8 @@ export default function ContactSection() {
                 <Button 
                   type="submit" 
                   className="w-full bg-primary text-white hover:bg-blue-800"
-                  disabled={createInquiryMutation.isPending}
                 >
-                  {createInquiryMutation.isPending ? "Sending..." : "Send Message"}
+                  Send Message via Email
                 </Button>
               </form>
             </Form>

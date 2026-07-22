@@ -17,33 +17,28 @@ Kizuna 絆 signifies not just 'bond' or 'connection,' but the deep, enduring rel
 
 ## 🚀 Deployment
 
-### Deployment targets
+This is a **client-only static site** (no backend) deployed to GitHub Pages
+behind a custom domain. The contact form opens the visitor's email client via
+a `mailto:` link.
 
-This repository contains two independent deploy targets:
-
-- **GitHub Pages (the live marketing site):** the static client only, built
-  with `npm run build:static`. There is **no backend** in this deploy — the
-  contact form opens the visitor's email client via a `mailto:` link. This is
-  what the `.github/workflows/static.yml` workflow publishes.
-- **Full-stack (optional, e.g. Node/Replit):** the Express API in `server/`
-  backed by Postgres via Drizzle (`shared/schema.ts`, `drizzle.config.ts`).
-  This is **not used by GitHub Pages** and is only relevant if you host the
-  full application yourself.
-
-### Automatic Deployment (GitHub Pages)
+### Automatic Deployment
 
 1. Push to the `main` branch
-2. `static.yml` type-checks, builds the static client, and deploys it
-3. The site is served at `https://nilpost.github.io/Kizuna/`
+2. `.github/workflows/static.yml` type-checks, builds the client, and deploys it
+3. The site is served at **https://kizuna.postiusgroup.com/**
 
-### Setup for a fork
+### Custom domain setup
 
-1. Fork or clone this repository
-2. Update the `base` path in `vite.config.static.ts` to match your repo name:
-   ```ts
-   base: "/your-repository-name/"
-   ```
-3. In repository **Settings → Pages**, set the source to **"GitHub Actions"**
+The domain is configured via the committed `client/public/CNAME` file
+(`kizuna.postiusgroup.com`). To point it at GitHub Pages:
+
+1. In your DNS provider (Cloudflare), add a `CNAME` record:
+   `kizuna` → `nilpost.github.io`
+2. In repository **Settings → Pages**, set the source to **"GitHub Actions"**
+   and the custom domain to `kizuna.postiusgroup.com` (enable "Enforce HTTPS")
+
+To serve from a plain `github.io` project path instead, set `base` in
+`vite.config.ts` to `"/<repository-name>/"` and remove the `CNAME` file.
 
 ## 🛠️ Development
 
@@ -60,24 +55,22 @@ npm run dev
 ### Build for Production
 
 ```bash
-# Build the static version for GitHub Pages (outputs dist/public/index.html)
-npm run build:static
+# Build the static site (outputs dist/public/index.html)
+npm run build
 ```
 
 ## 📁 Project Structure
 
 ```
-├── client/                 # Frontend React application
+├── client/                 # Frontend React application (SPA)
+│   ├── public/            # Static assets copied verbatim (incl. CNAME)
 │   ├── src/
-│   │   ├── components/     # React components
+│   │   ├── components/    # React components
 │   │   ├── pages/         # Page components
-│   │   └── lib/           # Utilities and configurations
-│   ├── index-static.html  # HTML template for static deployment
-│   └── App-static.tsx     # Static app version (no backend)
-├── server/                # Express backend — NOT deployed to Pages (see Deployment)
-├── shared/                # Shared types and schemas (used by the backend)
-├── .github/workflows/     # GitHub Actions deployment
-└── vite.config.static.ts  # Vite config for static build
+│   │   └── lib/           # Utilities
+│   └── index.html         # HTML entry point
+├── .github/workflows/     # GitHub Actions (build + deploy to Pages)
+└── vite.config.ts         # Vite config
 ```
 
 ## 🎨 Technologies
