@@ -70,6 +70,48 @@ Items are self-contained so a fresh session can pick any one up.
 
 ---
 
+## Salvaged from `japan-living-gateway-86` (archived 2026-07-30)
+
+`japan-living-gateway-86` was an earlier take on this same Japan-relocation site,
+archived in the 2026-07-30 portfolio triage because Kizuna is the more complete
+version (see `studio-ops/decisions/2026-07-30-opening-triage.md`).
+
+It was **not** an untouched scaffold — only its README was left as the stock Lovable
+template. It had 10 hand-built section components and nine real content commits.
+Kizuna already covers all but two of them. These are the two it does not.
+
+### 8. Bilingual JP/EN content — **P2, and the largest item here**
+- **Why:** Kizuna has **no language support at all** — every string is hardcoded in
+  a single language. This is a site selling Japanese relocation and investment to
+  an international audience, and its predecessor already solved this: every section
+  component in `japan-living-gateway-86/src/components/` takes a `language: string`
+  prop and selects from an inline `content = { en: {...}, ja: {...} }` object
+  (see `Services.tsx`, `TeamProfiles.tsx`).
+- **Scope:** decide the mechanism first — the prop-drilled `content` object is
+  simple and dependency-free but duplicates structure in every component; a small
+  context or `i18next` scales better. Then port the existing JA copy from the
+  archived repo rather than re-translating, and add a language toggle to
+  `navigation.tsx`.
+- **Risk:** touches every section component. Do it in one pass, not incrementally,
+  or the site ends up half-translated.
+- **Done when:** every section renders correctly in both locales and the choice
+  persists across navigation.
+
+### 9. Team profiles section — **P3**
+- **Why:** Kizuna has `about-section` and `testimonials-section` but no team page.
+  Trust matters for a relocation/investment service, and named people with faces
+  carry more of it than testimonials do.
+- **Scope:** port `japan-living-gateway-86/src/components/TeamProfiles.tsx`
+  (142 lines, already bilingual) to this codebase's naming convention
+  (`team-section.tsx`) and design system, then wire it into `pages/home.tsx`.
+- **Blocked by:** nothing, but it ships with EN-only copy unless item 8 lands
+  first — the source component's JA strings are already written, so doing 8 first
+  means this is free.
+- **Done when:** the section renders on the home page with real people, not
+  placeholders.
+
+---
+
 ## Done (shipped in PR #3)
 - Repaired the broken GitHub Pages deploy (single working workflow, correct
   build/base/output).
